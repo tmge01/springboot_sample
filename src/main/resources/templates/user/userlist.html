@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head :: head_fragment(title = 'ユーザー一覧', scripts = ~{::script}, links = ~{::link})"></head>
+<body>
+    <div class="container">
+        <h1>ユーザー一覧</h1>
+        <div class="float-end">
+            <a th:href="@{/user/add}" class="btn btn-primary">新規登録</a>
+        </div>
+        <br>
+        <div th:if="${userlist}">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ユーザーID</th>
+                        <th>名前</th>
+                        <th>メールアドレス</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${userlist}" th:object="${user}" class="align-middle">
+                        <td th:text="*{userid}"></td>
+                        <td th:text="*{name}"></td>
+                        <td th:text="*{email}"></td>
+                        <td align="right">
+                            <a th:href="@{/user/{userid}/edit(userid=*{userid})}" class="btn btn-primary">編集</a>
+                            <a th:href="@{/user/{userid}/delete(userid=*{userid})}" class="btn btn-secondary">削除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
