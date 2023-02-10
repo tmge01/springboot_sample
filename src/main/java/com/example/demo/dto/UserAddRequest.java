@@ -30,6 +30,4 @@ public class UserAddRequest implements Serializable {
     @NotEmpty(message = "メールアドレスを入力してください(必須")
     @Email(message = "メールアドレスの形式で入力してください")
     private String email;
-
-
 }

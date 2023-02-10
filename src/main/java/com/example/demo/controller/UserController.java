@@ -15,12 +15,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 import com.example.demo.service.UserService;
 import com.example.demo.dto.UserAddRequest;
 import com.example.demo.dto.UserUpdateRequest;
 import com.example.demo.entity.User;
-
 
 /**
  * ユーザー Controller
@@ -87,7 +85,6 @@ public class UserController {
         userService.delete(userid);
         return "redirect:/";
     }
-
     /**
      * ユーザー編集画面を表示
      * @param userid ユーザーID
@@ -104,7 +101,6 @@ public class UserController {
         model.addAttribute("userUpdateRequest", userUpdateRequest);
         return "user/useredit";
     }
-
     /**
      * ユーザー更新
      * @param userRequest リクエストデータ
@@ -124,7 +120,6 @@ public class UserController {
         // 編集したらユーザー一覧画面に戻る
         userService.update(userUpdateRequest);
         return "redirect:/";
-    }
-    
+    }   
 }
 
