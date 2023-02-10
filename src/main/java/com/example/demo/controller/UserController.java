@@ -45,7 +45,7 @@ public class UserController {
         return "user/userlist";
     }
     /**
-     * バリデーションチェックしてユーザー新規登録画面に遷移
+     * ユーザー新規登録画面に遷移
      * @param model Model
      * @return ユーザー新規登録画面
      */
