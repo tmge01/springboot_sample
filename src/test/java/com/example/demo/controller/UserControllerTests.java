@@ -106,13 +106,6 @@ public class UserControllerTests {
             .andExpect(MockMvcResultMatchers.view().name("redirect:/"))
             .andReturn();
     }
-
-
-
-
-
-
-
 }
 
 

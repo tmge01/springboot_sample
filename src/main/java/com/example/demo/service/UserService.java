@@ -48,7 +48,7 @@ public class UserService {
 
     /**
      * ユーザ情報更新
-     * @param userEditRequest リクエストデータ
+     * @param userUpdateRequest リクエストデータ
      */
     public void update(UserUpdateRequest userUpdateRequest) {
         userDao.update(userUpdateRequest);
